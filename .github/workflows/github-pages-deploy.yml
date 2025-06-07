@@ -56,7 +56,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload dist repository
-          path: './dist'
+          path: './.vitepress/dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
