@@ -38,7 +38,7 @@ export default defineConfig({
     ],
     editLink: {
       text: 'Edit this page on GitHub',
-      pattern: 'https://github.com/platformer/platformer-monorepo/edit/master/apps/docs/:path',
+      pattern: 'https://github.com/platformer/platformer-docs/edit/master/:path',
     },
     // https://vitepress.dev/reference/default-theme-footer#footer
     footer: {
