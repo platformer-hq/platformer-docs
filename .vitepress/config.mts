@@ -1,5 +1,7 @@
 import { defineConfig } from 'vitepress';
 
+import { ruConfig } from './ru';
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'Platformer',
@@ -8,6 +10,7 @@ export default defineConfig({
   // https://vitepress.dev/guide/i18n
   locales: {
     root: { label: 'English', lang: 'en' },
+    ru: { label: 'Русский', lang: 'ru', ...ruConfig },
   },
   // Show when each page content was last updated.
   // https://vitepress.dev/reference/default-theme-last-updated#last-updated
@@ -20,6 +23,9 @@ export default defineConfig({
   sitemap: {
     hostname: 'https://docs.mini-apps.store',
   },
+  // Pages directory.
+  // https://vitepress.dev/reference/site-config#srcdir
+  srcDir: './docs',
   // Configure <head/>.
   // https://vitepress.dev/reference/site-config#head
   head: [
@@ -30,28 +36,24 @@ export default defineConfig({
     // https://docs.mixpanel.com/docs/quickstart/connect-your-data?sdk=javascript
     ['script', { async: '', src: '/analytics.js' }],
   ],
-
   // https://vitepress.dev/reference/default-theme-config
   themeConfig: {
-    nav: [
-      { text: 'Documentation', link: '/about' },
-    ],
     editLink: {
       text: 'Edit this page on GitHub',
       pattern: 'https://github.com/platformer/platformer-docs/edit/master/:path',
     },
-    // https://vitepress.dev/reference/default-theme-footer#footer
     footer: {
       message: 'Released under the MIT License.',
       copyright: 'Copyright © 2025-present Platformer',
     },
+    logo: '/logo-48x48.png',
+    // https://vitepress.dev/reference/default-theme-footer#footer
+    nav: [
+      { text: 'Documentation', link: '/about' },
+    ],
     search: {
       provider: 'local',
     },
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/platformer-hq' },
-      { icon: 'telegram', link: 'https://t.me/platformer_hq' },
-    ],
     sidebar: [
       {
         text: 'Useful Information',
@@ -63,18 +65,25 @@ export default defineConfig({
       {
         text: 'Features',
         items: [
+          { text: 'Ecosystem', link: '/ecosystem' },
           { text: 'Separate Links', link: '/separate-links' },
-          { text: 'Apps Management System', link: '/apps-management-system' },
+          { text: 'Management System', link: '/management-system' },
           { text: 'Test Groups', link: '/test-groups' },
           { text: 'Privacy Levels', link: '/privacy-levels' },
+          { text: 'Cache Reset', link: '/cache-reset' },
+          { text: 'URL Viewer', link: '/url-viewer' },
         ],
       },
       {
         text: 'Guides',
         items: [
-          { text: 'Getting Started', link: '/getting-started' },
+          { text: 'Integration With Telegram Mini Apps', link: '/integration-with-tma' },
         ],
       },
+    ],
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/platformer-hq' },
+      { icon: 'telegram', link: 'https://t.me/platformer_hq' },
     ],
   },
 });
