@@ -69,9 +69,10 @@ is opened, the Telegram client will load that URL, which then loads your app.
 
 ## How It Works
 
-### Step 1: Read and Validate [Options](#available-options)
+### Step 1: Read and Validate Options
 
-The launcher reads and validates the passed options. If something is incorrect, an error screen is shown.
+The launcher reads and validates the [passed options](#available-options). If something is incorrect, an error screen is
+shown.
 
 ### Step 2: Authenticate the User
 
