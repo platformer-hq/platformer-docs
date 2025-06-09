@@ -38,38 +38,3 @@ There are two main app launch scenarios:
 
 > [!NOTE] In Development
 > This launch mode is still **in development** and will be available soon.
-
-## About Launchers
-
-Launchers are autonomous open-source web applications that allow Platformer to correctly display and handle mini-apps
-within the context of a specific platform. Each launcher is carefully adapted to the characteristics of its target
-environment.
-
-Currently, a launcher built for Telegram is available. Its source code is open and
-accessible [here](https://github.com/platformer-hq/platformer-monorepo/tree/master/apps/telegram-launcher).
-
-The launcher acts as a bridge between the native client and the developer's application. It doesn’t just render the
-interface—it also handles technical tasks specific to the platform, freeing the developer from dealing with them
-manually.
-
-Additionally, launchers implement unique features specific to Platformer, some of which have not yet been publicly
-announced.
-
-## Security Considerations
-
-Security is one of Platformer’s top priorities. Since the platform currently supports only Telegram, we’ll focus on
-that.
-
-Platformer uses only local storage and saves only the authorization token there. It does not access Telegram’s cloud
-storage or any other form of persistent storage, as it cannot guarantee the security of such data. This eliminates the
-risk of token theft by third-party apps.
-
-The most sensitive data is the [init data](https://docs.telegram-mini-apps.com/platform/init-data) sent by Telegram when
-launching a mini-app. To eliminate any risk of misuse (e.g., impersonating a user in another app), the launcher
-automatically removes the `hash` parameter from the init data, making it impossible to reuse.
-
-Instead, it uses Telegram’s recently introduced
-feature—[Third-Party Validation](https://docs.telegram-mini-apps.com/platform/init-data#using-telegram-public-key). This
-allows verification of the init data’s authenticity via the `signature` property. Thanks to this, Platformer only
-requires one thing from you: provide your Telegram bot ID in
-the [mini-app admin panel](https://t.me/platformer_robot/admin).
