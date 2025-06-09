@@ -44,6 +44,13 @@ export const ruConfig = defineConfig({
         ],
       },
       {
+        text: 'Лаунчеры',
+        items: [
+          { text: 'Основная информация', link: '/ru/launchers/about' },
+          { text: 'Для Telegram', link: '/ru/launchers/telegram' },
+        ],
+      },
+      {
         text: 'Гайды',
         items: [
           { text: 'Интеграция с Telegram Mini Apps', link: '/ru/integration-with-tma' },

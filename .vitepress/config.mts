@@ -75,6 +75,13 @@ export default defineConfig({
         ],
       },
       {
+        text: 'Launchers',
+        items: [
+          { text: 'General Information', link: '/launchers/about' },
+          { text: 'For Telegram', link: '/launchers/telegram' },
+        ],
+      },
+      {
         text: 'Guides',
         items: [
           { text: 'Integration With Telegram Mini Apps', link: '/integration-with-tma' },
