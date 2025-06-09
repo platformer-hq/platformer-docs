@@ -4,7 +4,7 @@
 fragmented mini-app platforms into a single space.**
 
 In today’s world, mini-apps are becoming a universal interface for user interaction. Telegram Mini Apps, VK Mini Apps,
-LINE, WhatsApp—each of these platforms has its own unique potential. However, developers are forced to repeat the same
+LINE, WeChat—each of these platforms has its own unique potential. However, developers are forced to repeat the same
 steps over and over for each one.
 
 **Platformer changes that.** By creating a mini-app within Platformer, you automatically gain the ability to launch it

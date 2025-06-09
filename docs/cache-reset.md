@@ -1,7 +1,7 @@
 # Cache Reset
 
 Even the most well-designed mini-apps can run into a simple but frustrating issue: **caching**. Native platform
-clients—such as Telegram, VK, WhatsApp, and others—may cache the link to your app and continue using an outdated
+clients—such as Telegram, VK, WeChat, and others—may cache the link to your app and continue using an outdated
 version, even after you’ve deployed a new build.
 
 This leads to situations where users (and even developers themselves) **don’t see the current version of the app**,
