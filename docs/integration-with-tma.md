@@ -27,7 +27,7 @@ Platformer needs your bot’s ID to properly verify the `init data` received fro
 
 1. In your app's settings, open the **“Telegram → Integration”** tab.
 2. Enter your **Telegram bot ID** and save the changes.
-3. Go to the **“Launcher Setup”** section and click **“Copy Link.”** This is your launcher URL for Telegram.
+3. Go to the **“Launcher Settings”** section and click **“Copy Link.”** This is your launcher URL for Telegram.
 
 ### Step 4. Set the Link via BotFather
 
@@ -42,7 +42,7 @@ app based on your configuration.
 
 If you created your app in Platformer first and now want to publish it in Telegram Mini Apps, follow these steps:
 
-1. In your Platformer app interface, go to **“Telegram → Launcher Setup.”**
+1. In your Platformer app interface, go to **“Telegram → Launcher Settings.”**
 2. Copy the generated launcher link.
 3. Open [@BotFather](https://t.me/botfather).
 4. If you don’t have a bot yet, create one using the `/newbot` command.
