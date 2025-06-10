@@ -18,6 +18,15 @@
 > Лаунчер не работает с мини-приложениями, базирующимися на Telegram SDK, так как тот содержит ошибку, не позволяющую
 > ланучеру корректно коммуницировать с Вашим мини-приложением.
 
+В случае, если Вы используете `@telegram-apps/sdk` или `@telegram-apps/bridge`, не забудьте указать корректный
+target origin. Это позволит библиотеке корректно коммуницировать с лаунчером Платформера:
+
+```ts
+import { targetOrigin } from '@telegram-apps/sdk'; // или '@telegram-apps/bridge'
+
+targetOrigin.set('https://tgl.mini-apps.store');
+```
+
 ## Доступные опции
 
 Лаунчер можно конфигурировать при помощи опций, указанных в таблице. Каждая опция должна быть передана как
@@ -135,3 +144,5 @@ Telegram — [Third-Party Validation](https://docs.telegram-mini-apps.com/platfo
   Использование [@telegram-apps/sdk@3](https://docs.telegram-mini-apps.com/packages/telegram-apps-sdk/3-x)
   или [@telegram-apps/bridge@2](https://docs.telegram-mini-apps.com/packages/telegram-apps-bridge/2-x) должно решить
   эту проблему.
+* **Не установлен target origin** — лаунчер Платформера не получает вызов метода `web_app_ready`, так как [корректное
+  значение `targetOrigin`](#требования) не было установлено.

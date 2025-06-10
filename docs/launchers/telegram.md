@@ -16,6 +16,15 @@ For the launcher to function properly, your mini-app must use one of the followi
 > The launcher does not work with mini-apps based on the Telegram SDK, due to a bug that prevents proper communication
 > between the launcher and your app.
 
+If you are using `@telegram-apps/sdk` or `@telegram-apps/bridge`, make sure to specify the correct target origin. This
+will allow the library to communicate properly with the Platformer launcher:
+
+```ts
+import { targetOrigin } from '@telegram-apps/sdk'; // or '@telegram-apps/bridge'
+
+targetOrigin.set('https://tgl.mini-apps.store');
+```
+
 ## Available Options
 
 The launcher can be configured using the options below. Each option should be passed as a query parameter in the
@@ -129,3 +138,5 @@ Your app may fail to load for the following reasons:
   Using [@telegram-apps/sdk@3](https://docs.telegram-mini-apps.com/packages/telegram-apps-sdk/3-x)
   or [@telegram-apps/bridge@2](https://docs.telegram-mini-apps.com/packages/telegram-apps-bridge/2-x) should resolve the
   issue.
+* **Target origin was not set** — Platformer launcher is not receiving the `web_app_ready` method call, as
+  long [the correct `targetOrigin` value](#requirements) was not set.
