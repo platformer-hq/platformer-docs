@@ -40,7 +40,7 @@ export default defineConfig({
   themeConfig: {
     editLink: {
       text: 'Edit this page on GitHub',
-      pattern: 'https://github.com/platformer/platformer-docs/edit/master/:path',
+      pattern: 'https://github.com/platformer-hq/platformer-docs/edit/master/:path',
     },
     footer: {
       message: 'Released under the MIT License.',
