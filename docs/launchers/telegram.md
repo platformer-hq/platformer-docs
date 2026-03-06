@@ -9,20 +9,20 @@ available [here](https://github.com/platformer-hq/platformer-monorepo/tree/maste
 
 For the launcher to function properly, your mini-app must use one of the following libraries:
 
-* [@telegram-apps/sdk](https://docs.telegram-mini-apps.com/packages/telegram-apps-sdk/3-x) version 3 or higher
-* [@telegram-apps/bridge](https://docs.telegram-mini-apps.com/packages/telegram-apps-bridge/2-x) version 2 or higher
+* [@tma.js/sdk](https://docs.telegram-mini-apps.com/packages/tma-js-sdk)
+* [@tma.js/bridge](https://docs.telegram-mini-apps.com/packages/tma-js-bridge)
 
 > [!DANGER] Telegram SDK Not Supported
-> The launcher does not work with mini-apps based on the Telegram SDK, due to a bug that prevents proper communication
+> The launcher does not work with mini-apps based on the Telegram SDK, due to a bug in the library that prevents proper communication
 > between the launcher and your app.
 
-If you are using `@telegram-apps/sdk` or `@telegram-apps/bridge`, make sure to specify the correct target origin. This
+If you are using `@tma.js/sdk` or `@tma.js/bridge`, make sure to specify the correct target origin. This
 will allow the library to communicate properly with the Platformer launcher:
 
 ```ts
-import { targetOrigin } from '@telegram-apps/sdk'; // or '@telegram-apps/bridge'
+import { setTargetOrigin } from '@tma.js/sdk'; // or '@tma.js/bridge'
 
-targetOrigin.set('https://tgl.mini-apps.store');
+setTargetOrigin('https://tgl.mini-apps.store');
 ```
 
 ## Available Options
@@ -133,10 +133,10 @@ Your app may fail to load for the following reasons:
 * **Slow loading speed** — Your server took too long to load app resources.
 * **Missing required method** — Your app didn’t
   call [web\_app\_ready](https://docs.telegram-mini-apps.com/platform/methods#web-app-ready).
-* **Unsupported SDK version** — Platformer does not support the **Telegram SDK** or **@telegram-apps/sdk** v2 or earlier
+* **Unsupported SDK version** — Platformer does not support the **Telegram SDK** or **@telegram-apps/sdk**
   due to broken client communication.
-  Using [@telegram-apps/sdk@3](https://docs.telegram-mini-apps.com/packages/telegram-apps-sdk/3-x)
-  or [@telegram-apps/bridge@2](https://docs.telegram-mini-apps.com/packages/telegram-apps-bridge/2-x) should resolve the
+  Using [@tma.js/sdk](https://docs.telegram-mini-apps.com/packages/tma-js-sdk)
+  or [@tma.js/bridge](https://docs.telegram-mini-apps.com/packages/tma-js-bridge) should resolve the
   issue.
 * **Target origin was not set** — Platformer launcher is not receiving the `web_app_ready` method call, as
   long [the correct `targetOrigin` value](#requirements) was not set.
