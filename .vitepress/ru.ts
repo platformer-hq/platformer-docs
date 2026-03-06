@@ -9,7 +9,7 @@ export const ruConfig = defineConfig({
     ],
     editLink: {
       text: 'Редактировать эту страницу на GitHub',
-      pattern: 'https://github.com/platformer/platformer-docs/edit/master/:path',
+      pattern: 'https://github.com/platformer-hq/platformer-docs/edit/master/:path',
     },
     // https://vitepress.dev/reference/default-theme-footer#footer
     footer: {
