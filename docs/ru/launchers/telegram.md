@@ -11,20 +11,20 @@
 
 Для корректной работы лаунчера, Ваше мини-приложение должно использовать одну из библиотек:
 
-- [@telegram-apps/sdk](https://docs.telegram-mini-apps.com/packages/telegram-apps-sdk/3-x) версии 3 и выше
-- [@telegram-apps/bridge](https://docs.telegram-mini-apps.com/packages/telegram-apps-bridge/2-x) версии 2 и выше
+- [@tma.js/sdk](https://docs.telegram-mini-apps.com/packages/tma-js-sdk)
+- [@tma.js/bridge](https://docs.telegram-mini-apps.com/packages/tma-js-bridge)
 
 > [!DANGER] Отсутствие поддержки Telegram SDK
 > Лаунчер не работает с мини-приложениями, базирующимися на Telegram SDK, так как тот содержит ошибку, не позволяющую
 > ланучеру корректно коммуницировать с Вашим мини-приложением.
 
-В случае, если Вы используете `@telegram-apps/sdk` или `@telegram-apps/bridge`, не забудьте указать корректный
+В случае, если Вы используете `@tma.js/sdk` или `@tma.js/bridge`, не забудьте указать корректный
 target origin. Это позволит библиотеке корректно коммуницировать с лаунчером Платформера:
 
 ```ts
-import { targetOrigin } from '@telegram-apps/sdk'; // или '@telegram-apps/bridge'
+import { setTargetOrigin } from '@tma.js/sdk'; // или '@tma.js/bridge'
 
-targetOrigin.set('https://tgl.mini-apps.store');
+setTargetOrigin('https://tgl.mini-apps.store');
 ```
 
 ## Доступные опции
@@ -139,10 +139,10 @@ Telegram — [Third-Party Validation](https://docs.telegram-mini-apps.com/platfo
 * **Низкая скорость загрузки** — Ваш сервер слишком долго загружал ресурсы приложения.
 * **Не вызван обязательный метод** — Ваше приложение не вызвало
   метод [web_app_ready](https://docs.telegram-mini-apps.com/platform/methods#web-app-ready).
-* **Несовместимая версия SDK** — Платформер не поддерживает **Telegram SDK** или **@telegram-apps/sdk** версии 2 и ниже
+* **Несовместимая версия SDK** — Платформер не поддерживает **Telegram SDK** или **@telegram-apps/sdk**
   из-за некорректной реализации связи между мини-приложениями и клиентом Telegram.
-  Использование [@telegram-apps/sdk@3](https://docs.telegram-mini-apps.com/packages/telegram-apps-sdk/3-x)
-  или [@telegram-apps/bridge@2](https://docs.telegram-mini-apps.com/packages/telegram-apps-bridge/2-x) должно решить
+  Использование [@tma.js/sdk](https://docs.telegram-mini-apps.com/packages/tma-js-sdk)
+  или [@tma.js/bridge](https://docs.telegram-mini-apps.com/packages/tma-js-bridge) должно решить
   эту проблему.
 * **Не установлен target origin** — лаунчер Платформера не получает вызов метода `web_app_ready`, так как [корректное
   значение `targetOrigin`](#требования) не было установлено.
